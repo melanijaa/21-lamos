@@ -181,3 +181,25 @@ switch(kas) {
     default:
         console.log('labanaktis');
 }
+
+
+//global scoup
+let b;
+if (3 < 7) {
+    //blokinis matomumas
+    //let z = 'valio';
+    b = 'woohoo'
+}
+
+console.log(b);
+//console.log(z);
+
+
+let c = 'labas'
+if (3 < 7) {
+    //let f = 'valio';
+    let c = 'woohoo'
+}
+
+console.log(c);
+//console.log(f);
