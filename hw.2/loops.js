@@ -78,21 +78,25 @@ for(let i = 0; i < ketvirtas; i++) {
 - Skaičius, generuojamus ciklo viduje dėkite į stringo tipo kintamąjį tarp skaičių darydami tarpą. Stringo tipo kintamąjį atspazdinkite už ciklo ribų jam pasibaigus;
 - Skaičius, generuojamus ciklo viduje dėkite į stringo tipo kintamąjį tarp skaičių darydami tarpą. Ciklui pasibaigus prie stringo tipo kintamojo pridėkite ciklo viduje generuotų skaičių sumą, paskaičiuotą kaip B dalyje. Stringo tipo kintamąjį atspausdinkite pasinaudodami console.log;
 */
-console.log('------------7-----------')
-
 
 let sumFor = 0;
-let šeštas = 0;
+let arrŠeštas = [];
 
 for (let i = 0; i < 5; i++) {
     let šeštas = rand(10,20);
     sumFor += šeštas
     console.log(šeštas)
+    arrŠeštas.push(šeštas);
 }
 
-console.log('------------7-----------')
-console.log(sumFor)
-console.log(`${šeštas} yra lygus ${sumFor}`)
+console.log(sumFor);
+
+/*
+let stringE = arrE.join(` ${e} `);
+console.log(stringE);
+console.log(typeof stringE);
+let stringWithSum = (`${stringE} ${sumE}`);
+console.log(stringWithSum);
 
 /*
 8. Deklaruokite kintamąjį (jeigu reikia kelis kintamuosius) už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(), kurie yra iš intervalo 10…25. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius mažesnis nei 12;
@@ -102,6 +106,37 @@ console.log(`${šeštas} yra lygus ${sumFor}`)
 - Sumą skaičiuokite kaip C dalyje, bet papildomai susikurkite kintamąjį, kuriame suskaičiuokite kiek reikšmių atmetėte (nesumavote). Rezultatą su suma ir atmestų reikšmių kiekiu atspauzdinkite pasinaudodami console.log už ciklo ribų;
 - Suskaičiuokite kiek tarp cikle atsitiktinai generuojamų reikšmių yra lyginių ir kiek nelyginių skaičių. Rezultatą atspauzdinkite pasinaudodami console.log už ciklo ribų jam pasibaigus.
 - Ciklą iš dalies B kartokite tol,  kol to ciklo iteracijų kiekis bus didesnis nei 20 (vieno ciklo). Paskaičiuokite kiek pakartojimų buvo atlikta ir rezultatą atspauzdinkite pabaigoje.
+*/
+
+let value1 = 0;
+let value2 = 0;
+let value3 = 0;
+let value4 = 0;
+let value5 = 0;
+let value6 = 0;
+
+while (value1 !== 12) {
+    value1 = rand(10,25);
+    console.log(value1);
+    value2++
+    if (value1 <= 18 ) {
+        value3 = value3 + value1; 
+        value4++
+    }
+    if (value1 % 2 === 0) { //even number 
+        value5++ 
+        console.log(`even number`) 
+    } else if (value1 % 2 !== 0) { //odd number 
+        value6++
+        console.log(`odd number`) 
+    }
+}
+
+console.log(`Prasisuko ${value2} kartų.`)
+console.log(value3);
+console.log(value4);
+console.log(`Cikle yra ${value5} lyginių skaičių`);
+console.log(`Cikle yra ${value6} nelyginių skaičių`);
 
 /*
 9. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(), kurie yra iš intervalo 5-10. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius 5;
@@ -110,6 +145,52 @@ console.log(`${šeštas} yra lygus ${sumFor}`)
 - Padarykite analogiškai kaip B dalyje, bet tik kai 5 yra sugeneruojami 3 kartus iš eilės;
 */
 
+
+let e = 0;
+while (e !== 5) {
+     e = rand(5,10);
+     console.log(e)
+for(let i = 0; i < e; i++) {
+        console.log(e);
+    }
+}
+
 /*
 10. Kazys ir Petras žaidžiai bingo. Petras per vieną partiją surenka taškų kiekį nuo 10 iki 20, Kazys - surenka taškų kiekį nuo 5 iki 25. Console.log išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartokite tol, kol kažkuris žaidėjas pirmas surenks 222 arba daugiau taškų.
 */
+
+// 1 DALIS
+let kazys = rand(10,20);
+let petras = rand(5,25);
+
+console.log(`Kazys surinko: ${kazys}.`);
+console.log(`Petras surinko: ${petras}.`);
+
+function laimetojas(kazys, petras) {
+    if (kazys > petras) {
+        return 'Partiją laimėjo: Kazys.';
+    } else if (kazys < petras) {
+        return 'Partiją laimėjo: Petras.';
+    }
+}
+console.log(laimetojas(kazys, petras));
+
+// 2 DALIS
+
+let kazioSuma = 0;
+let petroSuma = 0;
+
+while((kazioSuma < 222)&&(petroSuma < 222)){
+    kazioSuma += kazys;
+    petroSuma += petras;
+    
+      if (kazioSuma >= 222 && kazioSuma > petroSuma){
+      console.log(`laimejo Kazys surinkęs ${kazioSuma}` )
+  }
+      if (petroSuma >= 222 && petroSuma > kazioSuma){
+      console.log(`laimejo Petras surinkęs ${petroSuma}` )
+  }
+      if (petroSuma === 222 && kazioSuma === 222){
+      console.log(`Rezultatas - lygiosios` )
+  }
+}
