@@ -92,13 +92,6 @@ for (let i = 0; i < 5; i++) {
 console.log(sumFor);
 
 /*
-let stringE = arrE.join(` ${e} `);
-console.log(stringE);
-console.log(typeof stringE);
-let stringWithSum = (`${stringE} ${sumE}`);
-console.log(stringWithSum);
-
-/*
 8. Deklaruokite kintamąjį (jeigu reikia kelis kintamuosius) už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(), kurie yra iš intervalo 10…25. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius mažesnis nei 12;
 - Ciklo viduje sugeneruotą reikšmę priskirkite kintamajam, kurį sukūrėte už ciklo ribų ir jį atspauzdinkite;
 - Suskaičiuokite kiek iteracijų padarėte ir jų kiekį atspauzdinkite pasinaudodami console.log už ciklo ribų jam pasibaigus;
