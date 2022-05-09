@@ -47,7 +47,7 @@ for (i = 4; i >= 0; i--) {
 /*
 6. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti skaičius 0 2 4 6 8 (vienas skaičius vienoje eilutėje, daugybos konsolėje nenaudoti!, if’ų nenaudoti, ciklas for);
 */
-console.log('---------------------')
+
 const pazymiai = [0, 2, 4, 6, 8];
 
 
@@ -55,10 +55,9 @@ let i2 = 0;
 while (i2 < pazymiai.length) {
     const pazymys = pazymiai[i2];
 
-    console.log(`${i2}) ${pazymys}`);
+    console.log(parseInt(pazymys));
     i2++;
 }
-console.log('---------------------')
 
 /*
 7. console.log’e, naudojant ciklą penkiose eilutėse atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje);
@@ -105,6 +104,7 @@ console.log(`Prasisuko ${g} ciklas/ai.`)
 /*
 11. console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
 */
+
 /*
 let suma = 0;
 let ciklas = 0;
@@ -117,6 +117,7 @@ while (suma > 20 || ciklas < 11) {
 console.log(ciklas)
 console.log(suma)
 */
+
 /*
 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
 */

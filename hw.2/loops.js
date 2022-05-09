@@ -88,7 +88,7 @@ for (let i = 0; i < 5; i++) {
     console.log(šeštas)
 }
 console.log(sumFor)
-
+console.log('------------7-----------')
 
 /*
 8. Deklaruokite kintamąjį (jeigu reikia kelis kintamuosius) už ciklo ribų. Ciklo viduje generuokite atsitiktinius skaičius funkcija rand(), kurie yra iš intervalo 10…25. Ciklą kartokite tol, kol ciklo viduje bus sugeneruotas skaičius mažesnis nei 12;
