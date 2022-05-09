@@ -104,10 +104,10 @@ console.log(`Prasisuko ${g} ciklas/ai.`)
 /*
 11. console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
 */
-
 /*
 let suma = 0;
 let ciklas = 0;
+
 while (suma > 20 || ciklas < 11) {
      let randomNumber = rand(0,10);
      suma += randomNumber;
@@ -121,7 +121,13 @@ console.log(suma)
 /*
 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
 */
-
+console.log('-------------------------')
+let z = 0;
+while (z % 2 === 0) {
+    z = Math.floor(Math.random() * 10);
+    console.log(z);
+}
+console.log('-------------------------')
 /*
 13. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
 */
