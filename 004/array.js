@@ -87,7 +87,7 @@ for (let i = 0; i <100; i++) {
 console.table(naujasNamas);
 
 
-
+console.log('---------------------------')
 //10X10
 const naujasNamas1 = [];
 
@@ -99,7 +99,7 @@ for (let k = 0; k < 10; k++) {
     naujasNamas1.push(aukstas);
 }
 console.table(naujasNamas1);
-
+console.log('---------------------------')
 //random ilgis
 for (let k = 0; k < rand(3,10); k++) {};
 

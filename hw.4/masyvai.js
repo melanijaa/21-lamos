@@ -12,11 +12,23 @@ const pinigine = [];
 for (let i = 0; i < rand(10,30); i++) {
     pinigine.push(rand(0,10));
 }
+console.log(pinigine);
 console.table(pinigine);
 
 /*
 2. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio reikšmių (pinigų esančių piniginėje) sumą;
 */
+
+//1 variantas
+const sum = pinigine.reduce((partialSum, a) => partialSum + a, 0);
+console.log(sum);
+
+//2 variantas
+let sum1 = 0;
+for (let i = 0; i < pinigine.length; i++) {
+    sum1 += pinigine[i];
+}
+console.log(sum1);
 
 /*
 3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
@@ -30,6 +42,17 @@ console.table(pinigine);
 5. Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 */
 
+//1 variantas
+console.log(Math.max(...pinigine));
+
+//2 variantas
+let big = Math.max(...pinigine);
+let count = pinigine.reduce(function(a, b) {
+    return a + (b === big);
+}, 0);
+
+console.log(count);
+
 /*
 6. Visus masyvo elementus, kurie yra lygūs 0, pakeisti į tų elementų indeksų (vietų, numerių) reikšmes;
 */
@@ -38,10 +61,27 @@ console.table(pinigine);
 7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis būtų lygiai 30;
 */
 
+while(pinigine.length !== 30) {
+    pinigine.push(rand(0,10));
+}
+console.table(pinigine);
+
 /*
 8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
 */
+console.log('---------------------------')
+for(let i = 0; i < pinigine.length; i++) {
+    const monetas = [];
+    pinigine.push(rand(10,99));
+}
+console.log('---------------------------')
 
+const pinigine1 = [];
+for (let i = 0; i < rand(10,30); i++) {
+    pinigine.push(rand(0,10));
+}
+console.log(pinigine1);
+console.table(pinigine1);
 /*
 9. Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, kurio pirmas elementas būtų masyvas iš 8 uždavinio su monetom, o antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
 */
