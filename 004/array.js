@@ -100,3 +100,10 @@ for (let k = 0; k < 10; k++) {
 }
 console.table(naujasNamas1);
 
+//random ilgis
+for (let k = 0; k < rand(3,10); k++) {};
+
+//trecio zodzio antra raide
+const n = ['aasd', 'fdsf', 'fdsfd']
+n[2][2]
+
