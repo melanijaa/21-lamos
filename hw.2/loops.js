@@ -138,7 +138,6 @@ console.log(`Cikle yra ${value6} nelyginių skaičių`);
 - Padarykite analogiškai kaip B dalyje, bet tik kai 5 yra sugeneruojami 3 kartus iš eilės;
 */
 
-
 let e = 0;
 while (e !== 5) {
      e = rand(5,10);
