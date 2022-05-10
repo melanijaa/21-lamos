@@ -56,31 +56,20 @@ let r = rand(0, 2);
 let l = rand(0, 2);
 let v = rand(0, 2);
 
-let arr = [m, r, l, v];
-console.log(arr);
-let n = arr.length;
-countFreq(arr, n); 
+const arr = [m, r, l, v]
+console.log(arr)
+const map = arr.reduce(function(prev, cur) {
+  prev[cur] = (prev[cur] || 0) + 1;
+  return prev;
+}, {});
 
-function countFreq(arr, n)
-{
-    let visited = Array.from({length: n}, (_, i) => false);
-    for (let i = 0; i < n; i++) {
-        if (visited[i] == true)
-            continue;
-            let count = 1;
-        for (let j = i + 1; j < n; j++) {
-            if (arr[i] == arr[j]) {
-                visited[j] = true;
-                count++;
-            }
-        }
-           console.log(arr[i] + " " + count );
-    }
-}
+console.log(map);
 
 /*
 5. Naudokite funkcija rand(). Atspausdinkite 3 skaičius naudodami console.log() nuo -10 iki 10. Prie skaičių mažesnių už 0 iš abiejų pusių atspauzdinkite “+” simbolius,  didesnių už 0 iš abiejų pusių atspauzdinkite “-” simbolius, o prie 0 “*” simbolius
 */
+
+//1 VAR. ILGESNIS
 
 let q = rand(-10, 10);
 let w = rand(-10, 10);
@@ -110,10 +99,75 @@ if (y > 0) {
     console.log(`*${y}*`)
 }
 
+// 2 VAR.
+
+function ran(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+ }
+
+for(i = 0; i < 3; i++) {
+    let value = ran(-10, 10);
+    if(value > 0) {
+        console.log(`-${value}-`);
+    }
+    else if (value < 0) {
+        console.log(`+${value}+`);
+    }
+    else if (value === 0) {
+        console.log(`*${value}*`);
+    }
+}
+
 /*
 6. Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite skriptą, kuri skaičiuos žvakių kainą ir atspausdintų atsakymą su console.log() kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ funkcija nuo 5 iki 3000.
 */
 
+let zvakiuKiekis = rand(5, 3000);
+let zvakiuKaina = 1
+let zvakiuKaina1 = 0;
+
+if(zvakiuKiekis > 1000) {
+    console.log(`Kiekis: ${zvakiuKiekis}.
+    Kaina be nuolaidos: ${zvakiuKiekis * zvakiuKaina}.
+    Kaina su 3 % nuolaida: ${zvakiuKiekis * 0.97}eu.`)
+} else if(zvakiuKiekis > 2000) {
+    console.log(`Kiekis: ${zvakiuKiekis}.
+    Kaina be nuolaidos: ${zvakiuKiekis * zvakiuKaina}.
+    Kaina su 4 % nuolaida: ${zvakiuKiekis * 0.96}eu.`)
+} else console.log(`Kiekis: ${zvakiuKiekis}.
+Kaina: ${zvakiuKiekis * zvakiuKaina} EUR.`);
+
+console.log(zvakiuKiekis);
+
 /*
 7. Naudokite funkcija rand(). Sukurkite tris kintamuosius su atsitiktinėm reikšmėm nuo 0 iki 100. Paskaičiuokite jų aritmetinį vidurkį. Ir aritmetinį vidurkį atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90. Abu vidurkius atspausdinkite su console.log()
 */
+
+let pirmas = rand(0,100);
+let antras = rand(0,100);
+let trečias = rand(0,100);
+let suma123 = 0;
+let djfhdj = 0;
+
+const array = [pirmas, antras, trečias];
+
+for (let number of array) {
+    suma123 += number;
+    average = suma123 / array.length
+}
+
+filter = array.filter(
+    function (a) { 
+        return a >= 10 && a <=90; 
+    }),
+
+    average123 = filter.reduce(function (a, b) { return a + b; });
+
+console.log(array);
+console.log(average);
+console.log(average123);
+
+
+
+
+

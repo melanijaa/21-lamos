@@ -104,47 +104,80 @@ console.log(`Prasisuko ${g} ciklas/ai.`)
 /*
 11. console.log’e, naudojant ciklą atspausdinti atsitiktinius skirtingus skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklas turi pasibaigti tada, kai atsitiktinių skaičių suma viršija 20, bet ne anksčiau nei po 11 ciklų;
 */
-/*
+
 let suma = 0;
 let ciklas = 0;
 
-while (suma > 20 || ciklas < 11) {
-     let randomNumber = rand(0,10);
-     suma += randomNumber;
-     console.log(randomNumber)
+while (suma <= 20 || ciklas < 11) {
+    let randomNum1 = rand(0,10)
+    suma += randomNum1;
+    ciklas++
+    console.log(randomNum1);
 }
-
-console.log(ciklas)
-console.log(suma)
-*/
 
 /*
 12. console.log’e, naudojant ciklą atspausdinti skirtingus atsitiktinius skaičius nuo 0 iki 10 (vienas skaičius vienoje eilutėje). Ciklą kartoti kol bus sugeneruoti trys nelyginiai skaičiai;
 */
-console.log('-------------------------')
+console.log('--------------12-----------')
+
 let z = 0;
+
 while (z % 2 === 0) {
-    z = Math.floor(Math.random() * 10);
-    console.log(z);
+    z = rand(0,10);
 }
-console.log('-------------------------')
+
+console.log('--------------12-----------')
 /*
 13. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti tol, kol neiškris abu vienodi skaičiai;
 */
+/*
+console.log('---------------13----------')
+let j = rand(0,10);
+let y = rand(0,10);
 
-let j = 0;
-let y = 0;
-while (j !== y || y !== j) {
-     j = Math.floor(Math.random() * 10);
-     y = Math.floor(Math.random() * 10);
-}
-console.log(j)
-console.log(y)
-
+while (j !== y) {
+    console.log(j, y);
+    break;
+} 
+*/
 /*
 14. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Skaičiuoti abiejų skaičių sumas skirtinguose kintamuosiuose (skaičiuoti skaičių stulpelių sumas). Ciklą kartoti tol, kol kiekviena iš sumų bus daugiau nei 100;
 */
 
+let number1 = rand(0,10);
+let number2 = rand(0,10);
+let suma1 = 0;
+let suma2 = 0;
+
+while (suma1 <= 100 || suma2 <= 100) {
+    suma1 += number1;
+    suma2 += number2
+    console.log(suma1, suma2);
+}
+console.log(number1, number2);
+
+
 /*
 15. console.log’e, naudojant ciklą atspausdinti po porą skirtingų atsitiktinių skaičių nuo 0 iki 10 (abu skaičiai vienoje eilutėje). Ciklą kartoti kol bus sugeneruota po tris arba daugiau nelyginių skaičių  (skaičiai atskiruose stulpeliuose).
+*/
+/*
+let random1 = rand(0,10);
+let random2 = rand(0,10);
+let count1 = 0;
+let count2 = 0;
+
+while (count1 <= 3 && count2 <= 3)
+if (random1 % 2 !== 0) {
+    count1++
+}
+if (random2 % 2 !== 0) {
+    count2++
+}
+
+if (count1 >= 3 && count2 >= 3) {
+}
+
+while(count1 != 3 || count2 != 3);
+
+console.log(random1,random2)
 */
