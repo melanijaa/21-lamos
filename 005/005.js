@@ -102,3 +102,20 @@ console.log('----------DU NAMAI---------');
 const namasSuKaminu3 = JSON.parse(JSON.stringify(namasSuKaminu));
 namasSuKaminu3.animals.cat = 'kitas katinas';
 console.log(namasSuKaminu3, namasSuKaminu);
+
+console.log('-------------------MAP-----------------------');
+// map - greiatai susirasti ko nori
+
+const map = new Map();
+
+map.set('Murka', 5);
+map.set('Pilkis', 8);
+map.set('Pukis', 3);
+
+console.log(map);
+console.log(map.get('Pilkis'));
+map.delete('Pilkis');
+console.log(map.has('Pilkis'));
+
+const masmap = [...map];
+console.log(masmap);
