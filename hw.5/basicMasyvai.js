@@ -145,3 +145,9 @@ console.table(merge);
 /*
 9. Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
 */
+
+const ma = [rand(5, 15), rand(5, 15)];
+
+for (let i = 2; i < 10; i++) {
+    ma.push(ma[i - 1] + ma[i - 2]);
+}

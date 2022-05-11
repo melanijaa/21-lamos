@@ -1,3 +1,9 @@
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 const n1 = ['Asilas', 'asilas', 'briedis', 'kate', 'suo'];
 const n2 = ['Asilas', 'varle', 'briedis', 'suo'];
 
@@ -46,3 +52,24 @@ console.table('--------FOR OF--------'); //paima reiskme
 for (const ja of n1) {
     console.log(ja);
 }
+
+console.table('--------9 uzduotis--------');
+
+const ma = [(rand(5, 15), rand(5, 15))];
+
+for (let i = 2; i < 10; i++) {
+    ma.push(ma[i - 1] + ma[i - 2]);
+}
+
+
+console.log('----------OBJEKTAI---------');
+
+const kazkas = 'kdfsjkhfdjhfjdf';
+const namasSuKaminu = {
+    kaminas: 'yra 3 metrai',
+    gyventojai: ['Asilas', 'asilas', 'briedis', 'kate', 'suo'],
+    tas: kazkas
+};
+console.log(namasSuKaminu);
+console.log(namasSuKaminu.gyventojai, namasSuKaminu.tas);
+console.log(namasSuKaminu.tas);
