@@ -21,18 +21,25 @@ console.table(pinigine);
 
 //1 variantas
 const sum = pinigine.reduce((partialSum, a) => partialSum + a, 0);
-console.log(sum);
+console.log(`Piniginėje yra ${sum} pinigai.`);
 
 //2 variantas
 let sum1 = 0;
 for (let i = 0; i < pinigine.length; i++) {
     sum1 += pinigine[i];
 }
-console.log(sum1);
+console.log(`Piniginėje yra ${sum1} pinigai.`);
 
 /*
 3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 */
+
+let popieriniaiPinigai = 0; 
+
+while (pinigine < 2) {
+    popieriniaiPinigai++
+}
+console.log(`Piniginėje popierinių pinigų yra: ${popieriniaiPinigai}`);
 
 /*
 4. Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
@@ -69,6 +76,7 @@ console.table(pinigine);
 /*
 8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
 */
+/*
 console.log('---------------------------')
 for(let i = 0; i < pinigine.length; i++) {
     const monetas = [];
