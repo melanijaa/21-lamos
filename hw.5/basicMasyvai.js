@@ -9,12 +9,19 @@ function rand(min, max) {
 */
 
 const masyvas = [];
+for (let i = 0; i < 30; i++) {
+    masyvas.push(rand(5,25));
+}
+console.table(masyvas);
+
+//test
+console.log(Math.min(...masyvas))
 
 
 /*
 2. Naudodamiesi 1 uždavinio masyvu:
 1. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
-2.Raskite didžiausią masyvo reikšmę ir jos indeksą;
+2. Raskite didžiausią masyvo reikšmę ir jos indeksą;
 3. Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
 4. Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
 5. Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
@@ -22,6 +29,19 @@ const masyvas = [];
 7. Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
 8. Suraskite pirmą (mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;
 */
+
+//1
+
+let filter = masyvas.filter(x => x > 10).length;
+console.log(`Masyve skaičių > 10 yra ${filter}`);
+
+//2
+
+let bigNum = Math.max(...masyvas);
+let index = masyvas.indexOf(bigNum);
+
+console.log(bigNum);
+console.log(index);
 
 /*
 3. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
