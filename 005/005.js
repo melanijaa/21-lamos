@@ -73,3 +73,8 @@ const namasSuKaminu = {
 console.log(namasSuKaminu);
 console.log(namasSuKaminu.gyventojai, namasSuKaminu.tas);
 console.log(namasSuKaminu.tas);
+
+namasSuKaminu.animals = {cat: 'Murka', dog: 'Amsis'};
+console.log(namasSuKaminu);
+console.log(namasSuKaminu.animals);
+console.log(namasSuKaminu.animals.cat);
