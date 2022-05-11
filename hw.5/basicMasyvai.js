@@ -14,10 +14,6 @@ for (let i = 0; i < 30; i++) {
 }
 console.table(masyvas);
 
-//test
-console.log(Math.min(...masyvas))
-
-
 /*
 2. Naudodamiesi 1 uždavinio masyvu:
 1. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
@@ -40,8 +36,33 @@ console.log(`Masyve skaičių > 10 yra ${filter}`);
 let bigNum = Math.max(...masyvas);
 let index = masyvas.indexOf(bigNum);
 
-console.log(bigNum);
-console.log(index);
+console.log(`Didžiausias skaičius masyve: ${bigNum}`);
+console.log(`Skaičiaus vieta masyve: ${index}`);
+
+//2.1
+
+let minNum = Math.min(...masyvas);
+let index1 = masyvas.indexOf(minNum);
+
+console.log(`Mažiausias skaičius masyve: ${minNum}`);
+console.log(`Skaičiaus vieta masyve: ${index1}`);
+
+//3
+
+//4
+
+//5
+
+while(masyvas.length !== 39) {
+    masyvas.push(rand(5,25));
+}
+console.table(masyvas);
+
+//6
+
+//7
+
+//8
 
 /*
 3. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
@@ -83,13 +104,39 @@ console.log(`Raidžių masyve yra: A: ${countA}, B: ${countB}, C: ${countC}, D: 
 5. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
 */
 
+const arr1 = [];
+const arr2 = [];
+
+for (let i = 0; i <= 100; i++) {
+    arr1.push(rand(100, 999));
+    arr2.push(rand(100, 999));
+}
+
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
+let unique1 = arr1.filter(onlyUnique);
+let unique2 = arr2.filter(onlyUnique);
+  
+console.table(unique1);
+console.table(unique2);
+
 /*
 6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
 */
 
+const arr3 = [];
+const all = unique1.concat(arr3);
+console.table(all);
+
 /*
 7. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
 */
+
+const arr4 = [];
+const merge = arr4.concat(unique1, unique2);
+console.table(merge);
 
 /*
 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
