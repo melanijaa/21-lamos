@@ -120,7 +120,7 @@ let unique1 = arr1.filter(onlyUnique);
 let unique2 = arr2.filter(onlyUnique);
   
 console.table(unique1);
-console.table(unique2.length);
+console.table(unique2);
 
 /*
 6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.

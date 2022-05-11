@@ -36,3 +36,13 @@ for (let i = 0; i < n1.length; i++) {
     }
 }
 console.table(copy3);
+
+console.table('--------FOR IN--------'); //paima index
+for (const ja in n1) {
+    console.log(ja);
+}
+
+console.table('--------FOR OF--------'); //paima reiskme
+for (const ja of n1) {
+    console.log(ja);
+}
