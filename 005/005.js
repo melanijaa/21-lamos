@@ -78,3 +78,27 @@ namasSuKaminu.animals = {cat: 'Murka', dog: 'Amsis'};
 console.log(namasSuKaminu);
 console.log(namasSuKaminu.animals);
 console.log(namasSuKaminu.animals.cat);
+
+console.log('---------tiesiog linkas i nama/ reliai vienas ir tas pats----------');
+const namasSuKaminu2 = namasSuKaminu;
+namasSuKaminu2.animals.cat = 'kitas katinas';
+console.log(namasSuKaminu.animals.cat);
+console.log(namasSuKaminu2.animals.cat)
+
+console.log('----------masyvo kopija---------');
+
+const n4 = n1.slice(); //kopijavimas
+n4.shift();
+
+console.log(n1, n4);
+
+console.log('----------...---------');
+const a1 = {cat: 'Murka', dog: 'Amsis'};
+const a2 = {...a1};
+
+console.log(n1, n4);
+
+console.log('----------DU NAMAI---------');
+const namasSuKaminu3 = JSON.parse(JSON.stringify(namasSuKaminu));
+namasSuKaminu3.animals.cat = 'kitas katinas';
+console.log(namasSuKaminu3, namasSuKaminu);
