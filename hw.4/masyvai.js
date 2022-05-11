@@ -34,13 +34,6 @@ console.log(`Piniginėje yra ${sum1} pinigai.`);
 3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 */
 
-let popieriniaiPinigai = 0; 
-
-while (pinigine < 2) {
-    popieriniaiPinigai++
-}
-console.log(`Piniginėje popierinių pinigų yra: ${popieriniaiPinigai}`);
-
 /*
 4. Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
 */
