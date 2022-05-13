@@ -24,4 +24,8 @@ allH1.forEach(h1 => {
     console.log(h1);
     h1.style.color = 'pink';
     h1.style.backgroundColor = 'rgb(34, 139, 34)'; //#228B22
+    h1.innerText = 'TEXT'; //pakeisti h1 tag teksta
+    h1.innerHTML = '<i>TEXT</i>' //pakeisti teksto stiliu
 });
+
+
