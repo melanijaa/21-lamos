@@ -28,4 +28,9 @@ allH1.forEach(h1 => {
     h1.innerHTML = '<i>TEXT</i>' //pakeisti teksto stiliu
 });
 
+console.log('------------EVENT------------');
 
+const butt = document.querySelector('button');
+butt.addEventListener('click', () => {
+    console.log('SUBMIT')
+})
