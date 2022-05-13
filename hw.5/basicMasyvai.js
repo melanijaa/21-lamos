@@ -53,7 +53,14 @@ console.log(`Skaičiaus vieta masyve: ${index1}`);
 
 //5
 
+// 5.1 būdas ilgesnis ir ne toks efektyvus
 while(masyvas.length !== 39) {
+    masyvas.push(rand(5,25));
+}
+console.table(masyvas);
+
+// 5.2 budas
+for (let i = 0; i < 39 - masyvas.length ; i++) {
     masyvas.push(rand(5,25));
 }
 console.table(masyvas);
@@ -106,37 +113,56 @@ console.log(`Raidžių masyve yra: A: ${countA}, B: ${countB}, C: ${countC}, D: 
 
 const arr1 = [];
 const arr2 = [];
+let iterationSum = 100;
 
-for (let i = 0; i <= 100; i++) {
-    arr1.push(rand(100, 999));
-    arr2.push(rand(100, 999));
+for (let i = 0; i < iterationSum; i++) {
+    const randA = rand(100, 999)
+    const randB = rand(100, 999)
+    let idxA = arr1.indexOf(randA);
+    let idxB = arr2.indexOf(randB);
+    
+    if(arr1.length < 100){
+        if(idxA === -1){
+            arr1.push(randA);
+        } else {
+         iterationSum++
+        }
+    }
+    if(arr2.length <100){
+        if(idxB === -1){
+            arr2.push(randB);
+        } else {
+         iterationSum++
+        }
+    }
 }
 
-function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-}
-
-let unique1 = arr1.filter(onlyUnique);
-let unique2 = arr2.filter(onlyUnique);
-  
-console.table(unique1);
-console.table(unique2);
+console.table(arr1);
+console.table(arr2);
 
 /*
 6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
 */
 
-const arr3 = [];
-const all = unique1.concat(arr3);
-console.table(all);
+console.log('--------------------------------');
+
+console.log('--------------------------------');
 
 /*
 7. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
 */
 
 const arr4 = [];
-const merge = arr4.concat(unique1, unique2);
-console.table(merge);
+for (let i = 0; i < arr1.length; i++) {
+    const num = arr1[i];
+    for (let k = 0; k < arr2.length; k++) {
+        if (arr2[k] === num) {
+            arr4.push(num);
+            break;
+        }
+    }
+}
+console.log(arr4);
 
 /*
 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
@@ -151,3 +177,4 @@ const ma = [rand(5, 15), rand(5, 15)];
 for (let i = 2; i < 10; i++) {
     ma.push(ma[i - 1] + ma[i - 2]);
 }
+console.table(ma);
