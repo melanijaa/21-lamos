@@ -34,74 +34,131 @@ console.log(`Piniginėje yra ${sum1} pinigai.`);
 3. Naudojant ciklą apskaičiuoti masyvo iš 1 uždavinio popierinių pinigų (skaičių didesnių už 2 ) reikšmių sumą;
 */
 
+let sum2 = 0;
+for (let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] > 2) 
+    sum2 += pinigine[i];
+} console.log(`Piniginėje yra ${sum2} popierinių pinigų.`);
+
+
 /*
 4. Išleisti visus metalinius pinigus (reikšmes, kurios yra mažesnės arba lygios 2 padaryti lygias 0) iš 1 uždavinio;
 */
+
+for (let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] <= 2) {
+        pinigine[i] = 0;
+    }
+}
+console.log(pinigine);
 
 /*
 5. Surasti didžiausią reikšmę 1 uždavinio masyve ir paskaičiuoti kiek tokių didžiausių reikšmių masyve yra;
 */
 
-//1 variantas
-console.log(Math.max(...pinigine));
-
-//2 variantas
 let big = Math.max(...pinigine);
 let count = pinigine.reduce(function(a, b) {
     return a + (b === big);
 }, 0);
 
+console.log(Math.max(...pinigine));
 console.log(count);
 
 /*
 6. Visus masyvo elementus, kurie yra lygūs 0, pakeisti į tų elementų indeksų (vietų, numerių) reikšmes;
 */
 
+for (let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] === 0) {
+        pinigine[i] = i;
+    }
+}
+console.log(pinigine);
+
 /*
 7. Į 1 uždavinio masyvą pridėti tiek naujų reikšmių (pinigų, atsitiktinių skaičių nuo 0 iki 10), kad masyvo ilgis būtų lygiai 30;
 */
 
+//1 budas
 while(pinigine.length !== 30) {
     pinigine.push(rand(0,10));
 }
-console.table(pinigine);
+console.log(pinigine);
+
+//2 budas
+for (let i = 0; i < 30 - pinigine.length ; i++) {
+    pinigine.push(rand(5,25));
+}
+console.log(pinigine);
 
 /*
 8. Naudojant 1 uždavinio masyvą iš jo reikšmių sukurti dar du papildomus masyvus. Į vieną iš 1 uždavinio masyvo pridėti reikšmes mažesnes arba lygias 2 (monetas), o į kitą didesnes nei 2 (popierinius pinigus);
 */
-/*
-console.log('---------------------------')
-for(let i = 0; i < pinigine.length; i++) {
-    const monetas = [];
-    pinigine.push(rand(10,99));
-}
-console.log('---------------------------')
 
-const pinigine1 = [];
-for (let i = 0; i < rand(10,30); i++) {
-    pinigine.push(rand(0,10));
+const monetos = [];
+const pinigai = [];
+
+for(let i = 0; i < pinigine.length; i++) {
+    if (pinigine[i] <= 2) {
+        monetos.push(pinigine[i]);
+    } else if (pinigine[i] >= 2) {
+        pinigai.push(pinigine[i]);
+    } 
 }
-console.log(pinigine1);
-console.table(pinigine1);
+console.log(monetos);
+console.log(pinigai);
+
 /*
 9. Sukurti masyvą (piniginę su dviem skyreliais) iš dviejų elementų, kurio pirmas elementas būtų masyvas iš 8 uždavinio su monetom, o antras elementas masyvas iš 8 uždavinio su popieriniais pinigais;
 */
+
+const wallet = [...monetos, ...pinigai];
+console.log(wallet);
 
 /*
 10. Į 9 uždavinio masyvą, piniginę su dviem skyreliais, pridėti trečią skyrelį- masyvą su kortelėm: ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
 */
 
+const cards = ['KIKA', 'Euro Vaistinė', 'Drogas', 'Ačiū', 'Lietuvos Geležinkeliai', 'Mano RIMI'];
+wallet.push(...cards);
+console.log(wallet);
+
 /*
 11. Korteles skyrelyje sudėlioti (išrūšiuoti) pagal abėcėlę;
 */
+
+const cardsABC = cards.sort();
+console.log(cardsABC);
 
 /*
 12. Į kortelių skyrelį pridėti mokėjimo kortelių 'MasterCard', 'Visa' (su rand generuokite atsitiktines reikšmes 'MasterCard' arba 'Visa' ir rašykite į masyvą) iš skirtingų bankų tiek, kad skyrelis (masyvo ilgis) pasidarytų lygus 20;
 */
 
+for (let i = 0; i <= 13 ; i++) {
+    if (rand(1,2) === 1) {
+        cards.push('MasterCard');
+    } else {
+        cards.push('Visa');
+    }
+}
+console.log(cards);
+
 /*
 13. Paskaičiuokite, kokio tipo kortelių ('MasterCard' arba 'Visa') yra daugiau;
 */
+
+let cardA = 0;
+let cardB = 0;
+
+for (let i = 0; i < cards.length; i++) {
+    if (cards[i] === 'MasterCard') {
+        cardA++;
+    }
+    if (cards[i] === 'Visa') {
+        cardB++;
+    }
+}
+console.log(`MasterCard: ${cardA}. Visa: ${cardB}.`)
 
 /*
 14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;

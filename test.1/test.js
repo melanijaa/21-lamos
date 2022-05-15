@@ -17,3 +17,11 @@ while (suvalgė < 20) {
 }
 console.log(suvalgė);
 console.log(aplink);
+
+
+
+
+
+  
+      
+
