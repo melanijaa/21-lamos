@@ -18,22 +18,14 @@ console.log(masyvas.length);
 
 /*
 2. Naudodamiesi 1 uždavinio masyvu:
-1. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
-2. Raskite didžiausią masyvo reikšmę ir jos indeksą;
-3. Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
-4. Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
-5. Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
-6. Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių (pagal neporinį-porinį indeksą, ne reikšmę);
-7. Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
-8. Suraskite pirmą (mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;
 */
 
-//1
+//1 Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
 
 let filter = masyvas.filter(x => x > 10).length;
 console.log(`Masyve skaičių > 10 yra ${filter}`);
 
-//2
+//2 Raskite didžiausią masyvo reikšmę ir jos indeksą;
 
 let bigNum = Math.max(...masyvas);
 let index = masyvas.indexOf(bigNum);
@@ -47,7 +39,7 @@ let index1 = masyvas.indexOf(minNum);
 
 console.log(`Mažiausias skaičius masyve: ${minNum}, o skaičiaus vieta masyve: ${index1}`);
 
-//3
+//3 Suskaičiuokite visų porinių (lyginių) indeksų reikšmių sumą;
 
 function EvenOddSum(arr, n)
 {
@@ -68,9 +60,15 @@ function EvenOddSum(arr, n)
  
     EvenOddSum(masyvas, n);
 
-//4
+//4 Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
 
-//5
+const array4 = [];
+for (i = 0; i < masyvas.length; i++) {
+    array4.push(masyvas[i] - i);
+}
+console.log(array4)
+
+//5 Papildykite masyvą papildomais 10 elementų su reikšmėmis nuo 5 iki 25, kad bendras masyvas padidėtų iki indekso 39;
 
 // 5.1 būdas ilgesnis ir ne toks efektyvus
 while(masyvas.length !== 39) {
@@ -84,11 +82,40 @@ for (let i = 0; i < 39 - masyvas.length ; i++) {
 }
 console.log(masyvas);
 
-//6
+//6 Iš masyvo elementų sukurkite du naujus masyvus. Vienas turi būti sudarytas iš neporinių indeksų reikšmių, o kitas iš porinių (pagal neporinį-porinį indeksą, ne reikšmę);
 
-//7
+const array5 = [];
+const array6 = [];
 
-//8
+for (let i = 0; i < masyvas.length; i++) {
+    if (i % 2 === 0) {
+        array5.push(masyvas[i]) 
+    }
+    if (i % 2 !== 0) {
+        array6.push(masyvas[i]) 
+    }
+}
+console.log(array5);
+console.log(array6);
+
+
+//7 Pirminio masyvo elementus su poriniais indeksais padarykite lygius 0 jeigu jie didesni už 15;
+
+for (let i = 0; i < masyvas.length; i++) {
+    if (masyvas[i] > 15 && i % 2 === 0) {
+        masyvas[i] = 0;
+    }
+}
+console.log(masyvas);
+
+//8 Suraskite pirmą (mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;
+
+for (let i = 0; i < masyvas.length; i++) {
+    if (masyvas[i] > 10) {
+        console.log(i);
+        break;
+    }
+}
 
 /*
 3. Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
@@ -127,6 +154,18 @@ console.log(`Raidžių masyve yra: A: ${countA}, B: ${countB}, C: ${countC}, D: 
 */
 
 console.log('---------------4-----------------');
+const abc = ['A', 'B', 'C', 'D'];
+const array1 = [];
+const array2 = [];
+const array3 = [];
+for (let i = 1; i <= 200; i++) {
+    array1.push(raides[rand(0,3)]);
+    array2.push(raides[rand(0,3)]);
+    array3.push(raides[rand(0,3)]);
+}
+console.log(array1);
+console.log(array2);
+console.log(array3);
 
 console.log('----------------4----------------');
 
@@ -167,9 +206,13 @@ console.log(arr2);
 6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
 */
 
-console.log('---------------6-----------------');
-
-console.log('----------------6----------------');
+const arr5 = [];
+for (let i = 0; i < arr1.length; i++) {
+    if(!arr2.includes(arr1[i])) {
+        arr5.push(arr1[i]);
+    }
+}
+console.log(arr5);
 
 /*
 7. Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
