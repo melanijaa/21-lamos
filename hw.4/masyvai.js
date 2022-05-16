@@ -164,18 +164,64 @@ console.log(`MasterCard: ${cardA}. Visa: ${cardB}.`)
 14. Sukurkite masyve (piniginėje) ketvirtą elementą (skyrelį) į kurį įdėkite 10 loterijos bilietų, kurių numerius sugeneruokite atsitiktinai su rand funkcija nuo 1000000000 iki 9999999999;
 */
 
+const lottery = [];
+
+for (let i = 0; i < 10 ; i++) {
+    lottery[i] = rand(1000000000, 9999999999);
+}
+
+wallet.push(...lottery);
+console.log(wallet);
+
 /*
 15. Loterijos bilietų masyvą išrūšiuoti nuo didžiausio numerio iki mažiausio;
 */
+
+const lotteryMinMax = lottery.sort (
+    function(a, b) {
+    return a - b
+});
+console.log(lotteryMinMax);
 
 /*
 16. Į piniginės popierinių pinigų skyrelį įdėti 500 pinigų mažom kupiūrom ( generuoti atsitiktinius skaičius nuo 3 iki 10 ir dėti kaip naujus elementus, kol įdėta suma bus lygi 500);
 */
 
+const  money = rand(3, 10);
+let test = 0;
+
+do {
+    pinigai.push(money);
+    test += money
+} while (test < 500)
+
+console.log(pinigai);
+console.log(test);
+
 /*
 17. Patikrinti ar ką nors laimėjote. Bilieto numerius dalinkite iš 777 ir jeigu numeris išsidalins be liekanos - jūs laimėjote! Suskaičiuokite, kiek buvo laimingų bilietų.
 */
 
+let winner = 0;
+for (let i = 0; i < lottery.length; i++) {
+    if (lottery[i] % 777 === 0) {
+        winner++
+    }
+} 
+console.log(`Laimingų bilietų: ${winner}`);
+
 /*
 18. Sukurkite penktą skyrelį ir į jį sudėkite nuotraukas: ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'] ir jas išrūšiuokite pagal žodžių ilgį taip, kad pirma eitų trumpiausi žodžiai;
 */
+
+// pirma uzduoties dalis
+const photos = ['šuo', 'katė', 'automobilis', 'namas', 'kiemas'];
+wallet.push(...photos);
+console.log(wallet);
+
+// antra uzduoties dalis
+const photosMinMax = photos.sort (
+    function(a, b) {
+    return a.length - b.length
+});
+console.log(photosMinMax);
