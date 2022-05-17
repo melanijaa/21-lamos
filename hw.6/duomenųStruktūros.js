@@ -3,13 +3,25 @@ Duomenų struktūros
 https://docs.google.com/document/d/18fn5fVSlDmZGYl6UiANbpeMzg-UYAn5PWm0KZf05dlQ/edit
 */
 
-/*
 const products = ['Dviratis', 'Triratis', 'Žvakidė', 'Stalas', 'Kėdė', 'Knygų lentyna', 'Paveikslas su rėmu', 'Veidrodis', 'Keturių vietų palapinė', 'Pripučiama valtis', 'Meškerė karosams gaudyti', 'Planšetė', 'Pastatoma lempa', 'Vazonas', 'Baterijų pakrovėjas', 'Pagalvių komplektas', 'Oro drėkintuvas', 'Oro sausintuvas', 'Kavinukas elektrinis', 'Kilimas 2 X 3 metrų', 'Kilimėlis kojoms valyti', 'Užuolaidos', 'Vėjo malūnas', 'Dažai sienoms', 'Dažai luboms', 'Medinė dėžė'];
-*/
 
 /*
 1. Sukurti 100 sąskaitų masyvą.
 */
+
+const array = [];
+const bill = [];
+
+for (let i = 0; i < 100; i++) {
+    array.push( bill = {
+        number:
+        products: rand(1, 10),
+        title:
+        price: 
+    }
+    );
+}
+console.log(array);
 
 /*
 1.1. Kiekviena sąskaita yra objektas ir turi po 5 savybes:
@@ -24,6 +36,16 @@ total: visų products masyvo elementų total suma
 vat: 21% nuo total
 grandTotal: vat ir total suma
 */
+
+for ( let i = 0; i < array.length; i++) {
+        const bill = {
+           number: 'INV00' + i,
+           title: products[rand 0, ]
+
+
+
+        }
+}
 
 /*
 2. Sugeneruotame (ne generavimo metu!) masyve paskaičiuoti ir konsolėje atspausdinti visų sąskaitų grandTotal sumą, produktų sąrašą prie kiekvieno produkto pavadinimo pridedant koks to produkto kiekis yra visose sąskaitose bendrai ir už kokią bendrą sumą.
