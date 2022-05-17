@@ -13,13 +13,7 @@ const array = [];
 const bill = [];
 
 for (let i = 0; i < 100; i++) {
-    array.push( bill = {
-        number:
-        products: rand(1, 10),
-        title:
-        price: 
-    }
-    );
+    array.push(i)
 }
 console.log(array);
 

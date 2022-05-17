@@ -76,23 +76,33 @@ console.log(array1);
 6. Sugeneruokite atsitiktinio (nuo 10 iki 20) ilgio masyvą, kurio visi, išskyrus paskutinį, elementai yra atsitiktiniai skaičiai nuo 0 iki 10, o paskutinis masyvas, kuris generuojamas pagal tokią pat salygą kaip ir pirmasis masyvas. Viską pakartokite atsitiktinį nuo 10 iki 30  kiekį kartų. Paskutinio masyvo paskutinis elementas yra lygus 0;
 */
 
-const array2 = [];
-const array3 = [];
+const monsterSize = (rand(10, 30));
 
-for (let i = 0; i < rand(10,20); i++) {
-    array2.push(rand(0,10));
+const makeNiceArray = () => {
+    const array = [];
+    const size = rand(10, 20);
+    for (let i = 0; i < size; i++) {
+        array.push(rand(0,10));
+    }
+    return array;
 }
-for (let k = 0; k < rand(10,30); k++) {
-    array3.push(rand(0,10));
+
+let monster = [];
+
+for (let sizeNumber = 0; sizeNumber < monsterSize ; sizeNumber++) {
+    const monsterPart = makeNiceArray();
+    if (!sizeNumber) {
+        monsterPart[monsterPart.length - 1] = 0;
+    } else {
+        monsterPart[monsterPart.length - 1] = monster;
+    }
+    monster = monsterPart;
 }
-console.log(array2);
-console.log(array3);
+console.log(monster);
 
 /*
 7. Suskaičiuokite septinto uždavinio elementų, kurie nėra masyvai, sumą. Skaičiuoti reikia visuose masyvuose ir submasyvuose.
 */
-
-
 
 /*
 8. Sugeneruokite masyvą iš trijų elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 33. Jeigu tarp trijų paskutinių elementų yra nors vienas ne pirminis skaičius, prie masyvo pridėkite dar vieną elementą- atsitiktinį skaičių nuo 1 iki 33. Vėl patikrinkite pradinę sąlygą ir jeigu reikia pridėkite dar vieną elementą. Kartokite, kol sąlyga nereikalaus pridėti elemento.
@@ -101,3 +111,71 @@ console.log(array3);
 /*
 9. Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 100. Jeigu tokio didelio masyvo (ne atskirai mažesnių) pirminių skaičių vidurkis mažesnis už 70, suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3. Vėl paskaičiuokite masyvo pirminių skaičių vidurkį ir jeigu mažesnis nei 70 viską kartokite. 
 */
+
+const prime = (a) => {
+    let count = 0;
+    for (let i = 2; i < 1; i++) {
+        if (a % i === 0) {
+            count++
+        }
+    }
+    return count;
+}
+
+const sqArray = [];
+
+for (let i = 0; i < 10; i++) {
+    const row = [];
+    for (let y = 0; y < 10; y++) {
+        row.push(rand(1, 100));
+    }
+    sqArray.push(row);
+}
+
+const primeSum = a => {
+    let sum = 0;
+    let count = 0;
+    a.forEach(e => e.forEach(value => {
+        if(!prime(value)) {
+        count++
+        sum += value        }
+    }));
+    console.log(sum);
+    console.log(count);
+    return count ? sum / count : 0;
+}
+
+console.log(...sqArray);
+console.table(...sqArray);
+console.table(sqArray);
+console.log(primeSum(sqArray));
+
+const findMin = a => {
+    let min = 100; // a[0][0]
+    let coord = [0, 0];
+    a.forEach((r, ri) => r.forEach((value, ci) => {
+        if (value < min) {
+            min = value;
+            coord = [ri, ci];
+        }
+    }));
+    return coord ;
+}
+
+console.table(findMin(sqArray))
+
+let s = 100;
+
+while (primeSum(sqArray) < 70) {
+    if( --s === 0) {
+        console.log('BR');
+        break;
+    }
+    const [x, y] = findMin(sqArray);
+    sqArray[x][y] += 3;
+}
+
+console.table(findMin(sqArray))
+
+//global scope???
+//this???

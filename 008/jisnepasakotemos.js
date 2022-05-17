@@ -29,3 +29,15 @@ for (let sizeNumber = 0; sizeNumber < monsterSize ; sizeNumber++) {
 }
 console.log(monster);
 console.log('-----------------7function--------------------')
+
+console.log('-------------------------------------')
+const prime = (a) => {
+    let count = 0;
+    for (let i = 2; i < 1; i++) {
+        if (a % i === 0) {
+            count++
+        }
+    }
+    return count;
+}
+console.log('-------------------------------------')

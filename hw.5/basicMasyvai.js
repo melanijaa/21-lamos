@@ -173,6 +173,7 @@ console.log('----------------4----------------');
 5. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi būti unikalios savo masyve (t.y. neturi kartotis).
 */
 
+// 1 budas
 const arr1 = [];
 const arr2 = [];
 let iterationSum = 100;
@@ -201,6 +202,27 @@ for (let i = 0; i < iterationSum; i++) {
 
 console.log(arr1); //gali būti console.table
 console.log(arr2);
+
+
+// 2 budas
+const longSet1 = new Set()
+
+do {
+    longSet1.add(rand(100, 999));
+} while (longSet1.size < 100);
+
+const longArray = [...longSet1];
+
+const longSet2 = new Set()
+
+do {
+    longSet2.add(rand(100, 999));
+} while (longSet2.size < 100);
+
+const longArray1 = [...longSet2];
+
+console.log(longArray)
+console.log(longArray1)
 
 /*
 6. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve.
@@ -234,9 +256,13 @@ console.log(arr4);
 8. Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
 */
 
-console.log('-----------------8---------------');
+const freakArray = [];
+longArray1.forEach((v, i) => {
+    freakArray[v] = longArray1[i];
+});
 
-console.log('-----------------8---------------');
+console.log(freakArray);
+console.table(freakArray);
 
 /*
 9. Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
