@@ -107,6 +107,26 @@ console.log(monster);
 /*
 8. Sugeneruokite masyvą iš trijų elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 33. Jeigu tarp trijų paskutinių elementų yra nors vienas ne pirminis skaičius, prie masyvo pridėkite dar vieną elementą- atsitiktinį skaičių nuo 1 iki 33. Vėl patikrinkite pradinę sąlygą ir jeigu reikia pridėkite dar vieną elementą. Kartokite, kol sąlyga nereikalaus pridėti elemento.
 */
+console.log('----------------------888---------------')
+
+const whiteCat = [rand(1, 33), rand(1, 33), rand(1, 33), rand(1, 33)];
+
+const yesOrNo = (a, c = 3) => {
+    for (let i = 0; i < c; i++) {
+        if (prime(a.slice(-c)[i])) {
+            return true;
+        }
+    }
+    return false;
+}
+
+while(yesOrNo(whiteCat)) {
+    whiteCat.push(rand(1, 33));
+}
+
+console.log(whiteCat);
+
+console.log('----------------------888---------------')
 
 /*
 9. Sugeneruokite masyvą iš 10 elementų, kurie yra masyvai iš 10 elementų, kurie yra atsitiktiniai skaičiai nuo 1 iki 100. Jeigu tokio didelio masyvo (ne atskirai mažesnių) pirminių skaičių vidurkis mažesnis už 70, suraskite masyve mažiausią skaičių (nebūtinai pirminį) ir prie jo pridėkite 3. Vėl paskaičiuokite masyvo pirminių skaičių vidurkį ir jeigu mažesnis nei 70 viską kartokite. 
