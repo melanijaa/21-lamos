@@ -154,18 +154,23 @@ console.log(`Raidžių masyve yra: A: ${countA}, B: ${countB}, C: ${countC}, D: 
 */
 
 console.log('---------------4-----------------');
-const abc = ['A', 'B', 'C', 'D'];
+const abc = 'ABCD';
 const array1 = [];
 const array2 = [];
 const array3 = [];
-for (let i = 1; i <= 200; i++) {
-    array1.push(raides[rand(0,3)]);
-    array2.push(raides[rand(0,3)]);
-    array3.push(raides[rand(0,3)]);
+const randArray = (array) => {
+    while (array.length < 200) {
+        array.push(abc.charAt(rand(0, abc.length - 1)));
+    } return array;
 }
-console.log(array1);
-console.log(array2);
-console.log(array3);
+
+console.log(randArray(array1));
+console.log(randArray(array2));
+console.log(randArray(array3));
+
+const arraysSum = [];
+array1.forEach((v, i) => v + array2[i] + array3[i]);
+console.log(arraysSum)
 
 console.log('----------------4----------------');
 
