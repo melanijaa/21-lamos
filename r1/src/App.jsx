@@ -7,14 +7,17 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Hello></Hello>
+        <Hello spalva='green' color='pink'></Hello>  {/*spalva yra propsas*/}
         <Kurmis/>
-        <Hello/>
-        <Hello></Hello>
-        <Kurmis></Kurmis>
+        <Hello spalva='skyblue' color='yellow'/>
+        <Hello spalva='grey' color='lightgrey'></Hello>
+        <Kurmis skaicius={4}></Kurmis>
       </header>
     </div>
   );
 }
 
 export default App;
+
+
+// + konvertuoja stringa i skaiciu
