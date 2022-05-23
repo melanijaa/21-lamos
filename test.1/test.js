@@ -18,8 +18,32 @@ while (suvalgė < 20) {
 console.log(suvalgė);
 console.log(aplink);
 
+/*
+let data=7;
+while(data>=0) {
+  if(data<=5) {
+    data--;
+    continue;
+  }
+  console.log(data);
+  data--;
+}
 
+let zodis = "Programavimas";
+console.log(zodis.charAt(4))
 
+let zodis1="MokymasisMokykloje";
+console.log(zodis1.indexOf('M'))
+
+var x=1; 
+    var y=2;
+    console.log("Atsakymas: "+x+y);
+
+    const arr = [5, 4, 3, 2, 1];
+    arr.forEach((x,y) => {
+        console.log(y)
+    });
+*/
 
 
   
