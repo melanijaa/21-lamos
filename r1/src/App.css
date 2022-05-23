@@ -37,13 +37,14 @@
   }
 }
 
+
 .kv {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 77px;
   height: 77px;
-  background-color: coral;
+  background-color: crimson;
   margin: 7px;
   border-radius: 7px;
 }
